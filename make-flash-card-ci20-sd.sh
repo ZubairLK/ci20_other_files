@@ -3,8 +3,7 @@
 # Copyright (c) 2013 Imagination Technologies
 # Author: Paul Burton <paul.burton@imgtec.com>
 #
-# Creates an SD card which writes u-boot, a linux kernel & root filesystem to
-# the CI20 NAND flash.
+# Creates a bootable SD card for the CI20 using a kernel and rootfs tarball.
 #
 # Usage:
 #   ./make-flash-card.sh /dev/sdX /path/to/vmlinux /path/to/rootfs.tar.xz
