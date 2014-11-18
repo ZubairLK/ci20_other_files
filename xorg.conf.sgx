@@ -1,0 +1,19 @@
+# X.Org X server configuration file
+
+Section "Device"
+        Identifier      "Video Device"
+        Driver          "pvr"
+        Option          "FlipChain"     "true"
+        Option          "NoAccel"       "false"
+EndSection
+
+Section "Monitor"
+        Identifier      "Monitor"
+EndSection
+
+Section "Screen"
+        Identifier      "Screen"
+        Monitor         "Monitor"
+        Device          "Video Device"
+EndSection
+

@@ -1,0 +1,17 @@
+# X.Org X server configuration file for CI20
+
+Section "Device"
+        Identifier      "Device0"
+        Driver          "fbdev"
+EndSection
+
+Section "Monitor"
+        Identifier      "Monitor"
+EndSection
+
+Section "Screen"
+        Identifier      "Screen0"
+        Monitor         "Monitor"
+        Device          "Device0"
+        DefaultFbBpp    32
+EndSection
