@@ -248,6 +248,38 @@ echo "$temp                   DDRP_DCUSR1"
 #DDRP_DXGSR1(n) (DDRC_BASE + DDR_PHY_OFFSET + 0x1c8 + n * 0x40)) # DATX8 n General Status Register */
 #DDRP_DXDQSTR(n) (DDRC_BASE + DDR_PHY_OFFSET + 0x1d4 + n * 0x40)) # DATX8 n DQS Timing Register */
 
+DDRP_ZQXCR0_0=$((DDRC_BASE + DDR_PHY_OFFSET + 0x180 + 0 * 0x10)) # ZQ impedance Control Register 0 */
+temp=`./devmem $DDRP_ZQXCR0_0`
+echo "$temp                   DDRP_ZQXCR0_0"
+
+DDRP_ZQXCR1_0=$((DDRC_BASE + DDR_PHY_OFFSET + 0x184 + 0 * 0x10)) # ZQ impedance Control Register 1 */
+temp=`./devmem $DDRP_ZQXCR1_0`
+echo "$temp                   DDRP_ZQXCR1_0"
+
+DDRP_ZQXSR0_0=$((DDRC_BASE + DDR_PHY_OFFSET + 0x188 + 0 * 0x10)) # ZQ impedance Status Register 0 */
+temp=`./devmem $DDRP_ZQXSR0_0`
+echo "$temp                   DDRP_ZQXSR0_0"
+
+DDRP_ZQXSR1_0=$((DDRC_BASE + DDR_PHY_OFFSET + 0x18c + 0 * 0x10)) # ZQ impedance Status Register 1 */
+temp=`./devmem $DDRP_ZQXSR1_0`
+echo "$temp                   DDRP_ZQXSR1_0"
+
+DDRP_DXGCR_0=$((DDRC_BASE + DDR_PHY_OFFSET + 0x1c0 + 0 * 0x40)) # DATX8 n General Configuration Register */
+temp=`./devmem $DDRP_DXGCR_0`
+echo "$temp                   DDRP_DXGCR_0"
+
+DDRP_DXGSR0_0=$((DDRC_BASE + DDR_PHY_OFFSET + 0x1c4 + 0 * 0x40)) # DATX8 n General Status Register */
+temp=`./devmem $DDRP_DXGSR0_0`
+echo "$temp                   DDRP_DXGSR0_0"
+
+DDRP_DXGSR1_0=$((DDRC_BASE + DDR_PHY_OFFSET + 0x1c8 + 0 * 0x40)) # DATX8 n General Status Register */
+temp=`./devmem $DDRP_DXGSR1_0`
+echo "$temp                   DDRP_DXGSR1_0"
+
+DDRP_DXDQSTR_0=$((DDRC_BASE + DDR_PHY_OFFSET + 0x1d4 + 0 * 0x40)) # DATX8 n DQS Timing Register */
+temp=`./devmem $DDRP_DXDQSTR_0`
+echo "$temp                   DDRP_DXDQSTR_0"
+
 DDRP_ZQXCR0_1=$((DDRC_BASE + DDR_PHY_OFFSET + 0x180 + 1 * 0x10)) # ZQ impedance Control Register 0 */
 temp=`./devmem $DDRP_ZQXCR0_1`
 echo "$temp                   DDRP_ZQXCR0_1"

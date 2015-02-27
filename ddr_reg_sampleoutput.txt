@@ -1,68 +1,76 @@
 root@ci20-3110:~# ./readDDRCI20.sh
-Value at address 0x1000002C (0x2abb902c): 0xA0000002                   CPM_DDCDR
-Value at address 0x13010000 (0x2b022000): 0x80000003                   DDRC_BASE
-Value at address 0x13010000 (0x2b844000): 0x80000003                   DDRC_ST
-Value at address 0x13010004 (0x2b4f6004): 0x1AEC9A73                   DDRC_CFG
-Value at address 0x13010008 (0x2b567008): 0xC91C                   DDRC_CTRL
-Value at address 0x1301000C (0x2b56d00c): 0x0                   DDRC_LMR
-Value at address 0x13010018 (0x2b738018): 0x503C03                   DDRC_REFCNT
-Value at address 0x1301001C (0x2b20101c): 0x0                   DDRC_DQS
-Value at address 0x13010020 (0x2ae86020): 0x0                   DDRC_DQS_ADJ
-Value at address 0x13010024 (0x2b36a024): 0x80                   DDRC_MMAP0
-Value at address 0x13010028 (0x2b54c028): 0xFF00                   DDRC_MMAP1
-Value at address 0x1301002C (0x2b28b02c): 0x0                   DDRC_MDELAY
-Value at address 0x13010030 (0x2b356030): 0x0                   DDRC_CKEL
-Value at address 0x13010054 (0x2af60054): 0xAAAA                   DDRC_PMEMCTRL0
-Value at address 0x13010050 (0x2b5ab050): 0x0                   DDRC_PMEMCTRL1
-Value at address 0x13010058 (0x2b4ea058): 0xAAAAA                   DDRC_PMEMCTRL2
-Value at address 0x1301005C (0x2adf605c): 0x8000                   DDRC_PMEMCTRL3
-Value at address 0x13010060 (0x2b24a060): 0x40D0605                   DDRC_TIMING1
-Value at address 0x1301009C (0x2b31409c): 0x311100F                   DDRC_REMMAP1
-Value at address 0x13010064 (0x2af45064): 0x4100606                   DDRC_TIMING2
-Value at address 0x130100A0 (0x2ab770a0): 0x7060504                   DDRC_REMMAP2
-Value at address 0x13010068 (0x2ade0068): 0x27060416                   DDRC_TIMING3
-Value at address 0x130100A4 (0x2ad430a4): 0xB0A0908                   DDRC_REMMAP3
-Value at address 0x1301006C (0x2b28506c): 0x2A0C0733                   DDRC_TIMING4
-Value at address 0x130100A8 (0x2b7a40a8): 0xE0D0C                   DDRC_REMMAP4
-Value at address 0x13010070 (0x2b503070): 0x70404                   DDRC_TIMING5
-Value at address 0x130100AC (0x2abc00ac): 0x13120201                   DDRC_REMMAP5
-Value at address 0x13011004 (0x2b33b004): 0x0                   DDRP_PIR
-Value at address 0x13011008 (0x2af39008): 0x1842E02                   DDRP_PGCR
-Value at address 0x1301100C (0x2b30d00c): 0x1B                   DDRP_PGSR
-Value at address 0x13011018 (0x2b494018): 0x2000D4                   DDRP_PTR0
-Value at address 0x1301101C (0x2aeac01c): 0x2D30D40                   DDRP_PTR1
-Value at address 0x13011020 (0x2adc6020): 0x4013880                   DDRP_PTR2
-Value at address 0x13011024 (0x2b7db024): 0x30C00812                   DDRP_ACIOCR
-Value at address 0x13011028 (0x2b0cd028): 0x800                   DDRP_DXCCR
-Value at address 0x1301102C (0x2ab0402c): 0xFA00001F                   DDRP_DSGCR
-Value at address 0x13011030 (0x2b23b030): 0xB                   DDRP_DCR
-Value at address 0x13011034 (0x2afeb034): 0x2C906690                   DDRP_DTPR0
-Value at address 0x13011038 (0x2ac0b038): 0x5608A0                   DDRP_DTPR1
-Value at address 0x1301103C (0x2b51e03c): 0x10042A00                   DDRP_DTPR2
-Value at address 0x13011040 (0x2b14b040): 0x420                   DDRP_MR0
-Value at address 0x13011044 (0x2b942044): 0x2                   DDRP_MR1
-Value at address 0x13011048 (0x2b8f0048): 0x0                   DDRP_MR2
-Value at address 0x1301104C (0x2b74704c): 0x0                   DDRP_MR3
-Value at address 0x13011050 (0x2b5ef050): 0x0                   DDRP_ODTCR
-Value at address 0x13011054 (0x2b243054): 0x150000                   DDRP_DTAR
-Value at address 0x13011058 (0x2b7c3058): 0xDD22EE11                   DDRP_DTDR0
-Value at address 0x1301105C (0x2b37a05c): 0x7788BB44                   DDRP_DTDR1
-Value at address 0x130110C0 (0x2aef80c0): 0x0                   DDRP_DCUAR
-Value at address 0x130110C4 (0x2b1bf0c4): 0x0                   DDRP_DCUDR
-Value at address 0x130110C8 (0x2b8ef0c8): 0x0                   DDRP_DCURR
-Value at address 0x130110CC (0x2aaf50cc): 0xF0000000                   DDRP_DCULR
-Value at address 0x130110D0 (0x2b7240d0): 0x0                   DDRP_DCUGCR
-Value at address 0x130110D4 (0x2b6c40d4): 0x0                   DDRP_DCUTPR
-Value at address 0x130110D8 (0x2b4950d8): 0x0                   DDRP_DCUSR0
-Value at address 0x130110DC (0x2ab410dc): 0x0                   DDRP_DCUSR1
-Value at address 0x13011190 (0x2b9dd190): 0x0                   DDRP_ZQXCR0_1
-Value at address 0x13011194 (0x2b424194): 0x0                   DDRP_ZQXCR1_1
-Value at address 0x13011198 (0x2ae55198): 0x0                   DDRP_ZQXSR0_1
-Value at address 0x1301119C (0x2ba7e19c): 0x0                   DDRP_ZQXSR1_1
-Value at address 0x13011200 (0x2b1b3200): 0x881                   DDRP_DXGCR_1
-Value at address 0x13011204 (0x2aeef204): 0x8001                   DDRP_DXGSR0_1
-Value at address 0x13011208 (0x2b898208): 0x0                   DDRP_DXGSR1_1
-Value at address 0x13011214 (0x2b475214): 0x3DB05001                   DDRP_DXDQSTR_1
+Value at address 0x1000002C (0x2b3be02c): 0xA0000002                   CPM_DDCDR
+Value at address 0x13010000 (0x2b4cd000): 0x80000003                   DDRC_BASE
+Value at address 0x13010000 (0x2b246000): 0x80000003                   DDRC_ST
+Value at address 0x13010004 (0x2b3d5004): 0x1AEC9A73                   DDRC_CFG
+Value at address 0x13010008 (0x2b771008): 0xC91C                   DDRC_CTRL
+Value at address 0x1301000C (0x2ad1100c): 0x0                   DDRC_LMR
+Value at address 0x13010018 (0x2b0cf018): 0x504D03                   DDRC_REFCNT
+Value at address 0x1301001C (0x2b73001c): 0x0                   DDRC_DQS
+Value at address 0x13010020 (0x2ae7f020): 0x0                   DDRC_DQS_ADJ
+Value at address 0x13010024 (0x2ad6f024): 0x80                   DDRC_MMAP0
+Value at address 0x13010028 (0x2b1f9028): 0xFF00                   DDRC_MMAP1
+Value at address 0x1301002C (0x2ae2202c): 0x0                   DDRC_MDELAY
+Value at address 0x13010030 (0x2b98c030): 0x0                   DDRC_CKEL
+Value at address 0x13010054 (0x2b070054): 0xAAAA                   DDRC_PMEMCTRL0
+Value at address 0x13010050 (0x2b60b050): 0x0                   DDRC_PMEMCTRL1
+Value at address 0x13010058 (0x2b434058): 0xAAAAA                   DDRC_PMEMCTRL2
+Value at address 0x1301005C (0x2adc505c): 0x8000                   DDRC_PMEMCTRL3
+Value at address 0x13010060 (0x2b500060): 0x40D0605                   DDRC_TIMING1
+Value at address 0x1301009C (0x2b00d09c): 0x311100F                   DDRC_REMMAP1
+Value at address 0x13010064 (0x2ab31064): 0x4100606                   DDRC_TIMING2
+Value at address 0x130100A0 (0x2b1640a0): 0x7060504                   DDRC_REMMAP2
+Value at address 0x13010068 (0x2b00e068): 0x27060416                   DDRC_TIMING3
+Value at address 0x130100A4 (0x2b7ae0a4): 0xB0A0908                   DDRC_REMMAP3
+Value at address 0x1301006C (0x2b22506c): 0x2A0C0733                   DDRC_TIMING4
+Value at address 0x130100A8 (0x2ad720a8): 0xE0D0C                   DDRC_REMMAP4
+Value at address 0x13010070 (0x2b803070): 0x70404                   DDRC_TIMING5
+Value at address 0x130100AC (0x2b6840ac): 0x13120201                   DDRC_REMMAP5
+Value at address 0x13011004 (0x2ba99004): 0x0                   DDRP_PIR
+Value at address 0x13011008 (0x2ad75008): 0x1842E02                   DDRP_PGCR
+Value at address 0x1301100C (0x2ae6600c): 0x1B                   DDRP_PGSR
+Value at address 0x13011018 (0x2b70f018): 0x2000D4                   DDRP_PTR0
+Value at address 0x1301101C (0x2b7a301c): 0x2D30D40                   DDRP_PTR1
+Value at address 0x13011020 (0x2b1a3020): 0x4013880                   DDRP_PTR2
+Value at address 0x13011024 (0x2b12f024): 0x30C00812                   DDRP_ACIOCR
+Value at address 0x13011028 (0x2b3bb028): 0x800                   DDRP_DXCCR
+Value at address 0x1301102C (0x2b3e702c): 0xFA00001F                   DDRP_DSGCR
+Value at address 0x13011030 (0x2b51d030): 0xB                   DDRP_DCR
+Value at address 0x13011034 (0x2b90b034): 0x2C906690                   DDRP_DTPR0
+Value at address 0x13011038 (0x2ab53038): 0x5608A0                   DDRP_DTPR1
+Value at address 0x1301103C (0x2aca803c): 0x10042A00                   DDRP_DTPR2
+Value at address 0x13011040 (0x2baba040): 0x420                   DDRP_MR0
+Value at address 0x13011044 (0x2b711044): 0x2                   DDRP_MR1
+Value at address 0x13011048 (0x2af4b048): 0x0                   DDRP_MR2
+Value at address 0x1301104C (0x2af8704c): 0x0                   DDRP_MR3
+Value at address 0x13011050 (0x2b297050): 0x0                   DDRP_ODTCR
+Value at address 0x13011054 (0x2aba1054): 0x150000                   DDRP_DTAR
+Value at address 0x13011058 (0x2afbc058): 0xDD22EE11                   DDRP_DTDR0
+Value at address 0x1301105C (0x2b17b05c): 0x7788BB44                   DDRP_DTDR1
+Value at address 0x130110C0 (0x2b7180c0): 0x0                   DDRP_DCUAR
+Value at address 0x130110C4 (0x2b3a40c4): 0x0                   DDRP_DCUDR
+Value at address 0x130110C8 (0x2ac5b0c8): 0x0                   DDRP_DCURR
+Value at address 0x130110CC (0x2ba450cc): 0xF0000000                   DDRP_DCULR
+Value at address 0x130110D0 (0x2b60a0d0): 0x0                   DDRP_DCUGCR
+Value at address 0x130110D4 (0x2b47f0d4): 0x0                   DDRP_DCUTPR
+Value at address 0x130110D8 (0x2b8610d8): 0x0                   DDRP_DCUSR0
+Value at address 0x130110DC (0x2b1430dc): 0x0                   DDRP_DCUSR1
+Value at address 0x13011180 (0x2ab0a180): 0x100001CE                   DDRP_ZQXCR0_0
+Value at address 0x13011184 (0x2b1cd184): 0x7B                   DDRP_ZQXCR1_0
+Value at address 0x13011188 (0x2b951188): 0x1CE                   DDRP_ZQXSR0_0
+Value at address 0x1301118C (0x2b4c918c): 0x0                   DDRP_ZQXSR1_0
+Value at address 0x130111C0 (0x2b4341c0): 0x881                   DDRP_DXGCR_0
+Value at address 0x130111C4 (0x2b8d91c4): 0x8001                   DDRP_DXGSR0_0
+Value at address 0x130111C8 (0x2adde1c8): 0x0                   DDRP_DXGSR1_0
+Value at address 0x130111D4 (0x2b7791d4): 0x3DB05001                   DDRP_DXDQSTR_0
+Value at address 0x13011190 (0x2b6e8190): 0x0                   DDRP_ZQXCR0_1
+Value at address 0x13011194 (0x2abfc194): 0x0                   DDRP_ZQXCR1_1
+Value at address 0x13011198 (0x2b6c3198): 0x0                   DDRP_ZQXSR0_1
+Value at address 0x1301119C (0x2b09e19c): 0x0                   DDRP_ZQXSR1_1
+Value at address 0x13011200 (0x2b7fb200): 0x881                   DDRP_DXGCR_1
+Value at address 0x13011204 (0x2b687204): 0x8001                   DDRP_DXGSR0_1
+Value at address 0x13011208 (0x2afb6208): 0x0                   DDRP_DXGSR1_1
+Value at address 0x13011214 (0x2b04d214): 0x3DB05001                   DDRP_DXDQSTR_1
 Some bit masks for PHY in https://github.com/MIPS/CI20_u-boot/blob/ci20-v2013.10/arch/mips/include/asm/arch-jz4780/jz4780.h
 root@ci20-3110:~# uname -a
 Linux ci20-3110 3.0.8-12439-gf697891 #98 SMP PREEMPT Thu Sep 11 15:52:29 BST 2014 mips GNU/Linux
@@ -72,27 +80,5 @@ Distributor ID: Debian
 Description:    Debian GNU/Linux 8.0 (jessie)
 Release:        8.0
 Codename:       jessie
-root@ci20-3110:~# mount
-ubi0:root on / type ubifs (rw,relatime)
-sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
-proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
-devtmpfs on /dev type devtmpfs (rw,nosuid,size=510416k,nr_inodes=58601,mode=755)
-tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
-devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
-tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
-tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
-tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
-cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
-cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
-cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpuacct,cpu)
-cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
-cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
-cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
-cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
-debugfs on /sys/kernel/debug type debugfs (rw,relatime)
-fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
-ubi0:boot on /boot type ubifs (rw,relatime)
-tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=102108k,mode=700,uid=1000,gid=1000)
-tmpfs on /run/user/0 type tmpfs (rw,nosuid,nodev,relatime,size=102108k,mode=700)
 root@ci20-3110:~#
 
