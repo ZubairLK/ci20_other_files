@@ -72,7 +72,7 @@ sudo sfdisk ${device} -uM -L << EOF
 EOF
 
 # Deleting old uboot environment
-dd if=/dev/zero of=${device} bs=1K seek=526 count=32
+sudo dd if=/dev/zero of=${device} bs=1K seek=526 count=32
 
 # create ext3 partition
 sudo mkfs.ext4 ${device}1
