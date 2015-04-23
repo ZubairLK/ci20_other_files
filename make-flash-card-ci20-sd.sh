@@ -100,7 +100,7 @@ sudo tar -xaf ${rootTar} -C ${sdMount}
 
 if file "${vmlinux}" | grep uImage >/dev/null; then
   # already a uImage
-	if [!-d "${sdMount}/boot"]; then
+	if [ !-d "${sdMount}/boot" ]; then
 	    mkdir -p "${sdMount}/boot";
 	fi;
 
