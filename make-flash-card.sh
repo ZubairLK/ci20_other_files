@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Copyright (c) 2013 Imagination Technologies
 # Author: Paul Burton <paul.burton@imgtec.com>
