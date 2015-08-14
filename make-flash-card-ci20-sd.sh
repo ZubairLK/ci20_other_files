@@ -67,8 +67,8 @@ ${CROSS_COMPILE}objcopy --version >/dev/null 2>&1 || \
   die "No ${CROSS_COMPILE}objcopy, set \$CROSS_COMPILE"
 
 # partition SD/MMC card
-sudo sfdisk ${device} -uM -L << EOF
-2,,L
+sudo sfdisk ${device} -L << EOF
+2M,,L
 EOF
 
 # Deleting old uboot environment
