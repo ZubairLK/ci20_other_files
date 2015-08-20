@@ -7,7 +7,7 @@
 # the ci20 NAND flash.
 #
 # Usage:
-#   ./make-flash-card.sh /dev/sdX /path/to/vmlinux /path/to/rootfs.tar.xz
+#   ./make-flash-card.sh /dev/sdX /path/to/rootfs.tar.xz
 #
 
 set -e
@@ -35,12 +35,8 @@ device="$1"
 grep ${device} /etc/mtab >/dev/null && \
   die "Device '${device}' contains mounted partitions"
 
-# check kernel
-vmlinux="$2"
-[ -e "${vmlinux}" ] || die "Kernel (vmlinux) '${vmlinux}' not found"
-
 # check root filesystem
-rootTar="$3"
+rootTar="$2"
 [ -e "${rootTar}" ] || die "Root filesystem tarball '${rootTar}' not found"
 
 # default environment
@@ -99,37 +95,24 @@ pushd $ubootDir
   sudo cp -v u-boot.img ${sdMount}/
 popd
 
+# build & copy boot UBIFS image
 bootPartDir=${tmpDir}/boot_partition
 bootImage=${tmpDir}/boot.ubifs
-mkdir ${bootPartDir}
-
-if file "${vmlinux}" | grep uImage >/dev/null; then
-  # already a uImage
-  cp -v "${vmlinux}" ${bootPartDir}/vmlinux.img
-else
-  # generate kernel uImage
-  vmlinuxBin=${tmpDir}/vmlinux.bin
-  ${CROSS_COMPILE}objcopy -O binary ${vmlinux} ${vmlinuxBin}
-  ${ubootDir}/tools/mkimage \
-    -A mips -O linux -T kernel -C none -a 0x80010000 \
-    -e `readelf -h ${vmlinux} | grep 'Entry point' | awk '{print $4}'` \
-    -n "ci20 linux" -d ${vmlinuxBin} ${bootPartDir}/vmlinux.img
-fi
-
-# build & copy boot UBIFS image
-mkfs.ubifs -q -r ${bootPartDir} -m 8192 -e 2080768 -c 64 -o ${bootImage}
-bootImageSize=`stat -c %s ${bootImage}`
-bootImageSizeHex=`echo "ibase=10; obase=16; ${bootImageSize}" | bc`
-sudo cp -v ${bootImage} ${sdMount}/
 
 # build root UBIFS image (copied in chunks whilst generating environment)
 rootPartDir=${tmpDir}/root_partition
 rootImage=${tmpDir}/root.ubifs
 mkdir ${rootPartDir}
 fakeroot sh -c "tar -xaf ${rootTar} -C ${rootPartDir} && \
+  mv ${rootPartDir}/boot ${bootPartDir} && \
+  mkfs.ubifs -q -r ${bootPartDir} -m 8192 -e 2080768 -c 128 -o ${bootImage} && \
   mkfs.ubifs -q -r ${rootPartDir} -m 8192 -e 2080768 -c 4196 -o ${rootImage}"
 rootImageSize=`stat -c %s ${rootImage}`
 rootImageSizeHex=`echo "ibase=10; obase=16; ${rootImageSize}" | bc`
+
+bootImageSize=`stat -c %s ${bootImage}`
+bootImageSizeHex=`echo "ibase=10; obase=16; ${bootImageSize}" | bc`
+sudo cp -v ${bootImage} ${sdMount}/
 
 # generate (SD/MMC) u-boot environment
 envText=${tmpDir}/u-boot-env.txt
