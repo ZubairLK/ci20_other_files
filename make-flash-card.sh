@@ -70,7 +70,7 @@ sudo sfdisk ${device} -L << EOF
 EOF
 
 # create ext4 partition
-sudo mkfs.ext4 ${device}1
+sudo mkfs.ext2 ${device}1
 
 # mount ext4 partition
 sdMount=${tmpDir}/sd_mount
