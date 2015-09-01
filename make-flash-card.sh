@@ -117,7 +117,7 @@ else
 fi
 
 # build & copy boot UBIFS image
-mkfs.ubifs -q -r ${bootPartDir} -m 4096 -e 1040384 -c 128 -o ${bootImage}
+mkfs.ubifs -q -r ${bootPartDir} -m 8192 -e 2080768 -c 128 -o ${bootImage}
 bootImageSize=`stat -c %s ${bootImage}`
 bootImageSizeHex=`echo "ibase=10; obase=16; ${bootImageSize}" | bc`
 sudo cp -v ${bootImage} ${sdMount}/
@@ -127,7 +127,7 @@ rootPartDir=${tmpDir}/root_partition
 rootImage=${tmpDir}/root.ubifs
 mkdir ${rootPartDir}
 fakeroot sh -c "tar -xaf ${rootTar} -C ${rootPartDir} && \
-  mkfs.ubifs -q -r ${rootPartDir} -m 4096 -e 1040384 -c 4196 -o ${rootImage}"
+  mkfs.ubifs -q -r ${rootPartDir} -m 8192 -e 2080768 -c 4196 -o ${rootImage}"
 rootImageSize=`stat -c %s ${rootImage}`
 rootImageSizeHex=`echo "ibase=10; obase=16; ${rootImageSize}" | bc`
 
@@ -140,7 +140,7 @@ nand erase.chip; \
 ext4load mmc 0:1 0x80000000 u-boot-spl.bin; \
 writespl 0x80000000 8; \
 ext4load mmc 0:1 0x80000000 u-boot.img; \
-nand write 0x80000000 0x400000 0x80000; \
+nand write 0x80000000 0x800000 0x80000; \
 mtdparts default; \
 ubi part system; \
 ubi create boot 0x4000000; \
