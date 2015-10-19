@@ -115,6 +115,9 @@ else
     -n "CI20 Linux" -d ${vmlinuxBin} ${sdMount}/boot/vmlinux.img
 fi
 
+echo "Deleting /etc/fstab"
+rm -f ${sdMount}/etc/fstab
+
 echo "SD contents:"
 ls -hl ${sdMount}/
 
