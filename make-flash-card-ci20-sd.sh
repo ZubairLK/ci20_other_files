@@ -59,7 +59,7 @@ fi
 which bc >/dev/null || die "No bc in \$PATH"
 which fakeroot >/dev/null || die "No fakeroot in \$PATH"
 which sfdisk >/dev/null || die "No sfdisk in \$PATH"
-which mkfs.ext3 >/dev/null || die "No mkfs.ext3 in \$PATH"
+which mkfs.ext4 >/dev/null || die "No mkfs.ext4 in \$PATH"
 which mkfs.ubifs >/dev/null || die "No mkfs.ubifs in \$PATH"
 ${CROSS_COMPILE}gcc --version >/dev/null 2>&1 || \
   die "No ${CROSS_COMPILE}gcc, set \$CROSS_COMPILE"
@@ -74,10 +74,10 @@ EOF
 # Deleting old uboot environment
 sudo dd if=/dev/zero of=${device} bs=1K seek=526 count=32
 
-# create ext3 partition
+# create ext4 partition
 sudo mkfs.ext4 ${device}1
 
-# mount ext3 partition
+# mount ext4 partition
 sdMount=${tmpDir}/sd_mount
 mkdir ${sdMount}
 sudo mount ${device}1 ${sdMount}
