@@ -67,20 +67,20 @@ ${CROSS_COMPILE}objcopy --version >/dev/null 2>&1 || \
   die "No ${CROSS_COMPILE}objcopy, set \$CROSS_COMPILE"
 
 # partition SD/MMC card
-sudo sfdisk ${device} -L << EOF
-2M,,L
+sudo sfdisk ${device} -uM -L << EOF
+2,,L
 EOF
 
 # Deleting old uboot environment
 sudo dd if=/dev/zero of=${device} bs=1K seek=526 count=32
 
 # create ext4 partition
-sudo mkfs.ext4 ${device}1
+sudo mkfs.ext4 ${device}p1
 
 # mount ext4 partition
 sdMount=${tmpDir}/sd_mount
 mkdir ${sdMount}
-sudo mount ${device}1 ${sdMount}
+sudo mount ${device}p1 ${sdMount}
 
 # clone u-boot
 ubootDir=$tmpDir/u-boot
@@ -100,11 +100,11 @@ sudo tar -xaf ${rootTar} -C ${sdMount}
 
 if file "${vmlinux}" | grep uImage >/dev/null; then
   # already a uImage
-	if [ ! -d "${sdMount}/boot" ]; then
-	    mkdir -p "${sdMount}/boot";
+	if ! [ -d "${sdMount}/boot" ]; then
+	    sudo mkdir -p "${sdMount}/boot";
 	fi;
 
-	sudo cp -v "${vmlinux}" ${sdMount}/boot/vmlinux.img
+	sudo cp -v "${vmlinux}" ${sdMount}/boot/uImage
 else
   # generate kernel uImage
   vmlinuxBin=${tmpDir}/vmlinux.bin
@@ -112,14 +112,14 @@ else
   ${ubootDir}/tools/mkimage \
     -A mips -O linux -T kernel -C none -a 0x80010000 \
     -e `readelf -h ${vmlinux} | grep 'Entry point' | awk '{print $4}'` \
-    -n "CI20 Linux" -d ${vmlinuxBin} ${sdMount}/boot/vmlinux.img
+    -n "CI20 Linux" -d ${vmlinuxBin} ${sdMount}/boot/uImage
 fi
 
 echo "Deleting /etc/fstab"
-rm -f ${sdMount}/etc/fstab
+sudo rm -f ${sdMount}/etc/fstab
 
 echo "SD contents:"
 ls -hl ${sdMount}/
 
 echo "Finished, wait for clean up before removing your card!"
-sync
+sudo sync
