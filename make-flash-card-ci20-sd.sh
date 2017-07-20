@@ -91,6 +91,12 @@ pushd $ubootDir
   make distclean
   make ARCH=mips ci20_mmc
 #  make -j${JOBS}
+  maxsize=14336
+  cursize=$(wc -c < spl/u-boot-spl.bin)
+  # JZ4780 internal boot ROM reads 14KB (14336 bytes) of data from the boot device
+  if [ $cursize -ge $maxsize ]; then
+    die "Size '${cursize}' is over '${maxsize}' bytes"
+  fi
   sudo dd if=spl/u-boot-spl.bin of=${device} obs=512 seek=1
   sudo dd if=u-boot.img of=${device} obs=1K seek=14
 popd
